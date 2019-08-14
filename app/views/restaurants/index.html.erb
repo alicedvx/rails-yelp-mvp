@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="text-center mb-5 mt-5">
+    <h1>5 adresses où bien manger à Paris</h1>
+  </div>
+
+  <ul>
+  <% @restaurants.each do |restaurant| %>
+    <h2><%= restaurant.name %></h2>
+    <li>
+      <i class="fas fa-map-pin"></i>
+      <%= restaurant.address %>
+    </li>
+    <li>
+      <i class="fas fa-phone"></i>
+      <%= restaurant.phone_number %>
+    </li>
+    <li>
+      <i class="fas fa-utensils"></i>
+      <%= restaurant.category %>
+    </li>
+    <%= link_to 'En savoir plus', restaurant_path(restaurant), class: "btn btn-primary mt-3 mb-5" %>
+    <% end %>
+  </ul>
+</div>
